@@ -1,0 +1,7 @@
+docker pull dpage/pgadmin4
+docker run -p 547:80 \
+    -e "PGADMIN_DEFAULT_EMAIL=siratis.w@gmail.com" \
+    -e "PGADMIN_DEFAULT_PASSWORD=owlahedwig" \
+    -d dpage/pgadmin4
+
+use host.docker.internal for localhost in pgadmin
