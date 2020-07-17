@@ -11,7 +11,7 @@ services:
     volumes:
       - ./db_vol:/var/lib/postgresql/data
   nwcc-project-web:
-    image: bird50/resource_cat:v2
+    image: bird50/resource_cat:v3
     #command: python manage.py runserver 0.0.0.0:8000
     command: tail -F anything
     volumes:
