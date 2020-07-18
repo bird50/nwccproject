@@ -54,9 +54,9 @@ class Rs_Cat(models.Model):
     )
     date_recived = models.DateTimeField(verbose_name='วันที่ได้รับข้อมูล',blank=True,null=True)
     reference_doc = models.TextField(verbose_name='เอกสารอ้างอิง',blank=True,null=True)
-    document01 = models.FileField(upload_to='documents/',verbose_name='เอกสารประกอบ 1',null=True,blank=True)
-    document02 = models.FileField(upload_to='documents/',verbose_name='เอกสารประกอบ 2',null=True,blank=True)
-    document03 = models.FileField(upload_to='documents/',verbose_name='เอกสารประกอบ 3',null=True,blank=True)
+    document01 = models.FileField(upload_to='documents/%Y/%m/',verbose_name='เอกสารประกอบ 1',null=True,blank=True)
+    document02 = models.FileField(upload_to='documents/%Y/%m/',verbose_name='เอกสารประกอบ 2',null=True,blank=True)
+    document03 = models.FileField(upload_to='documents/%Y/%m/',verbose_name='เอกสารประกอบ 3',null=True,blank=True)
     related_subject = models.TextField(verbose_name='หัวข้อที่เกี่ยวข้อง',blank=True,null=True)
     data_licensing = models.TextField(verbose_name='อธิบายสิทธิของชุดข้อมูล',blank=True,null=True)
     note = models.TextField(verbose_name='โน๊ต',blank=True,null=True)
@@ -64,7 +64,6 @@ class Rs_Cat(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
-
 
 #กลุ่มข้อมูลตามยุทธศาสตร์ และ พรบ.
 class GroupActPrb(models.Model):
