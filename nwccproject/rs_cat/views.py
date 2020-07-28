@@ -7,7 +7,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
 def index(request):
-    return render(request, 'rs_cat/home.html')
+    return render(request, 'rs_cat/index.html')
 # Create your views here.
 
 def list(request):
@@ -16,6 +16,9 @@ def list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'rs_cat/list.html', {'page_obj': page_obj})
+
+
+
 
 
 class rs_catViewSet(ReadOnlyModelViewSet):
