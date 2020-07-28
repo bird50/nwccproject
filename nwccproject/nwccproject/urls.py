@@ -19,20 +19,32 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework_swagger.views import get_swagger_view
 from rs_cat.views import rs_catViewSet
-
+'''
+กรณีใช้ Router
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('rs_cat', rs_catViewSet)
+'''
 
 schema_view = get_swagger_view(title='NWCC API')
+
+rs_cat_list = rs_catViewSet.as_view({
+    'get': 'list'
+})
+rs_cat_detail = rs_catViewSet.as_view({
+    'get': 'retrieve'
+})
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nwcc.urls')),
     path('nwcc/', include('nwcc.urls')),
     path('rs_cat/', include('rs_cat.urls')),
-    path('api/',include(router.urls)),
+    #path('api/',include(router.urls)), # กรณีใช้ Router
     path('api_doc/',schema_view),
+    path('api_v1/rs_cat/',rs_cat_list),
+    path('api_v1/rs_cat/<int:pk>',rs_cat_detail),
 ]
 
 

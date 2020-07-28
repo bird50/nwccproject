@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet,ReadOnlyModelViewSet
 from .models import Rs_Cat
 from .serializers import Rs_CatSerializer
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 def index(request):
     return render(request, 'rs_cat/home.html')
@@ -16,9 +18,14 @@ def list(request):
     return render(request, 'rs_cat/list.html', {'page_obj': page_obj})
 
 
-class rs_catViewSet(ModelViewSet):
+class rs_catViewSet(ReadOnlyModelViewSet):
     queryset = Rs_Cat.objects.all()
     serializer_class = Rs_CatSerializer
+    filter_backends = [filters.SearchFilter,DjangoFilterBackend]
+    filterset_fields = ['agency','agency_provided_data', 'status','type_of_data']
+    search_fields = ['name', 'keyword','note']
+    
+    
     
 '''    
 from django.conf.urls import url
