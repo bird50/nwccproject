@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'nwcc',
     'rs_cat',
     'multiselectfield',
+    'rest_framework',
+    'rest_framework_swagger',
 #    'funky_sheets',
 ]
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
