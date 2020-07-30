@@ -8,5 +8,5 @@ from django.http import HttpResponse
 #    return HttpResponse("Hello, This is NWCC App")
 
 def index(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 # Create your views here.
