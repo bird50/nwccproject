@@ -42,7 +42,7 @@ urlpatterns = [
     path('nwcc/', include('nwcc.urls')),
     path('rs_cat/', include('rs_cat.urls')),
     #path('api/',include(router.urls)), # กรณีใช้ Router
-    path('api_doc/',schema_view),
+    path('api_doc/',schema_view,name="api_doc"),
     path('api_v1/rs_cat/',rs_cat_list),
     path('api_v1/rs_cat/<int:pk>',rs_cat_detail),
 ]

@@ -1,12 +1,12 @@
-{% extends "_base.html" %}
+{% extends "_base01.html" %}
 {% load static %}
 {%block title%}NWCC - Resource Data Category{%endblock%}
 {%block textlogo%}Resource Data Category{%endblock%}
 {%block menu%}
 <!-- Navigation Menu-->   
                     <ul class="navigation-menu">
-                        <li><a href="rs_cat/">Home</a></li>
-                        <li><a href="#">Category</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="cat/">Category</a></li>
                     </ul>
 {%endblock%}
 
@@ -36,3 +36,56 @@
         </section><!--end section-->
         <!-- Hero End -->
 {%endblock%}{#topsection#}
+
+{%block section01%}
+{%endblock%}{#section01#}
+{%block section02%}
+{%endblock%}{#section02#}
+{%block section03%}
+{%endblock%}{#section03#}
+{%block section04%}
+{%endblock%}{#section04#}
+{%block section05%}
+{%endblock%}{#section05#}
+{%block section06%}
+{%endblock%}{#section06#}
+{%block section07%}
+{%endblock%}{#section07#}
+{%block sitemap%}
+<footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                        <a class="logo-footer text-dark" href="#">Dev Team<span class="text-primary">.</span></a>
+                        <p class="mt-4 text-muted mb-0">จัดทำโดยทีมงาน กลุ่มงานสารสนเทศทรัพยากรน้ำ ศูนย์อำนวยการน้ำแห่งชาติ <nobr>สำนักงานทรัพยากรน้ำแห่งชาติ</nobr></p>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">Org</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="http://www.onwr.go.th" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> สทนช. (ONWR)</a></li>
+                            <li><a href="http://www.nwcc.go.th" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> ศอน. (NWCC)</a></li>
+                        </ul>
+                    </div><!--end col-->
+
+                    <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">Sitemap</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="http://{{request.get_host}}/admin/" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Login</a></li>
+                            <li><a href="cat/" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Category</a></li>
+                            <li><a href="http://{{request.get_host}}/admin/" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Admin->manage category</a></li>
+                            <li><a href="{%url 'api_doc'%}" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Service API</a></li>
+                        </ul>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">Other Category</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Data Set Service(via NWCC Drive)</a></li>
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Data Set Service category (comming soon)</a></li>
+                        </ul>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer><!--end footer-->
+{%endblock%}{#sitemap#}

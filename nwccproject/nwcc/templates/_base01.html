@@ -1,0 +1,636 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    
+        <meta charset="utf-8" />
+        <title>{% block title %}NWCC{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="National Water Management" />
+        <meta name="keywords" content="National Water Management" />
+        <meta content="NWCC" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static "images/favicon.ico"%}">
+        <!-- Bootstrap -->
+        <link href="{%static "css/bootstrap.min.css"%}" rel="stylesheet" type="text/css" />
+        <!-- Icons -->
+        <link href="{%static "css/materialdesignicons.min.css"%}" rel="stylesheet" type="text/css" />
+        <link href="{%static "css/themify-icons.css"%}" rel="stylesheet" type="text/css">
+        <!-- Magnific Popup -->
+        <link href="{%static "css/magnific-popup.css"%}" rel="stylesheet" type="text/css" />
+        <!-- Slider -->               
+        <link rel="stylesheet" href="{%static "css/owl.carousel.min.css"%}"/> 
+        <link rel="stylesheet" href="{%static "css/owl.theme.default.min.css"%}"/> 
+        <!-- Main css --> 
+        <link href="{%static "css/style.css"%}" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="{%static "css/colors/default.css"%}" rel="stylesheet" id="color-opt">
+        {%block header%}{%endblock%}
+    
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <div>
+                    <a class="logo" href="index.html">{%block textlogo%}NWCC{%endblock%}<span class="text-primary">.</span></a>
+                </div>                 
+                <div class="buy-button">
+                    <a href="{{login_url|default:'login/'}}" class="btn btn-primary">Login</a>
+                </div><!--end login button-->
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+        
+                <div id="navigation">
+                    {%block menu%}
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu">
+                        <li><a href="index.html">Home</a></li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Demos</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="index-agency.html">Agency</a></li>
+                                <li><a href="index-software.html">Software</a></li>     
+                                <li><a href="index-startup.html">Startup</a></li> 
+                                <li><a href="index-application.html">Application</a></li>  
+                                <li><a href="index-business.html">Business</a></li>  
+                                <li><a href="index-freelancer.html">Freelancer</a></li>  
+                                <li><a href="index-marketing.html">Marketing</a></li>  
+                                <li><a href="index-property.html">Property</a></li>   
+                            </ul>
+                        </li>
+        
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="page-about.html">Aboutus</a></li>
+                                <li><a href="page-profile.html">Profile</a></li>
+                                <li><a href="page-services.html">Services</a></li>
+                                <li><a href="page-pricing.html">Pricing</a></li>
+                                <li><a href="page-team.html">Team</a></li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Blog</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="page-blog.html">Blog</a></li>
+                                        <li><a href="page-blog-sidebar.html">Blog Sidebar</a></li>
+                                        <li><a href="page-blog-single.html">Single Blog</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Case Study</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="static/page-cases.html">Cases</a></li>
+                                        <li><a href="static/page-case-single.html">Single Case</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Work</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="static/page-work.html">Work</a></li>
+                                        <li><a href="static/page-work-single.html">Single Work</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Authentication</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="static/page-login.html">Login Simple</a></li>
+                                        <li><a href="static/page-signup.html">Signup Simple</a></li>
+                                        <li><a href="static/page-forgot-password.html">Forgot Password Simple</a></li>
+                                        <li><a href="static/page-login-2.html">Login</a></li>
+                                        <li><a href="static/page-signup-2.html">Signup</a></li>
+                                        <li><a href="static/page-forgot-password-2.html">Forgot Password</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Utility</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="static/page-faq.html">F.A.Q.</a></li>
+                                        <li><a href="static/page-t&c.html">Terms & Conditions</a></li>
+                                        <li><a href="static/page-privacy.html">Privacy Policy</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Special</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="static/page-comingsoon.html">Coming Soon</a></li>
+                                        <li><a href="static/page-maintenance.html">maintenance</a></li>
+                                        <li><a href="static/page-404.html">Error 404</a></li>
+                                    </ul>  
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Support</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="changelog.html">Changelog</a></li>
+                                <li><a href="components.html">Components</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul><!--end navigation menu-->
+                    {%endblock%}{#menu#}
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+       {%block topsection%} 
+        <!-- Hero Start -->
+        <section class="bg-half-170 bg-light d-table w-100" style="background: url('{%static "images/marketing/marketing.png"%}');">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="title-heading mt-4">
+                            <h1 class="heading mb-3">Get Ready for Digital Marketing</h1>
+                            <p class="para-desc text-muted">Start work with <span class="text-primary">Leaping</span>. Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                            <div class="watch-video mt-4 pt-2">
+                                <a href="javascript:void(0)" class="btn btn-primary mb-2 mr-2">Get Started</a>
+                                <a href="http://vimeo.com/99025203" class="video-play-icon watch text-dark mb-2"><i class="mdi mdi-play play-icon-circle text-center d-inline-block mr-2 rounded-pill text-white position-relative play play-iconbar"></i> Watch Video !</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                        <img src="{%static "images/marketing/Degital_marketing_SVG.svg"%}" alt="">
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div> <!--end container-->
+        </section><!--end section-->
+        <!-- Hero End -->
+        {%endblock%}{#topsection#}
+        
+        <!-- Section Start -->
+        <section class="section border-top">
+            {%block section01%}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-2 col-6 text-center">
+                        <img src="{%static "images/client/spotify.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+
+                    <div class="col-lg-2 col-md-2 col-6 text-center">
+                        <img src="{%static "images/client/shopify.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center mt-4 mt-sm-0">
+                        <img src="{%static "images/client/paypal.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center mt-4 mt-sm-0">
+                        <img src="{%static "images/client/lenovo.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center mt-4 mt-sm-0">
+                        <img src="{%static "images/client/google.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center mt-4 mt-sm-0">
+                        <img src="{%static "images/client/amazon.svg"%}" height="30" alt="">
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            {%endblock%}{#section01#}
+            {%block section02%}
+            <div class="container mt-100 mt-60">
+                <div class="p-4 rounded shadow">
+                    <div class="row align-items-center">
+                        <div class="col-sm-7">
+                            <div class="text-sm-left">
+                                <h4 class="mb-0">Start building beautiful block-based websites.</h4>
+                            </div>
+                        </div><!--end col-->
+    
+                        <div class="col-sm-5 mt-4 mt-sm-0">
+                            <div class="text-sm-right">
+                                <a href="javascript:void(0)" class="btn btn-outline-primary"><i class="mdi mdi-file-document-outline"></i> Register Today</a>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row -->
+                </div>
+            </div><!--end container-->
+            {%endblock%}{#section02#}
+            <!-- Feature Start -->
+            {%block section03%}
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <div class="p-3 rounded text-center">
+                            <h1><i class="ti-ruler-pencil text-primary"></i></h1>
+                            <div class="content">
+                                <h5 class="title mt-3">Stylish Design</h5>
+                                <p class="text-muted mt-2 mb-0">If the distribution of letters and 'words' distribution is random, the reader will not be distracted.</p>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="p-3 rounded text-center">
+                            <h1><i class="ti-layers-alt text-primary"></i></h1>
+                            <div class="content">
+                                <h5 class="title mt-3">Fresh Layouts</h5>
+                                <p class="text-muted mt-2 mb-0">The most well-known dummy text is the 'Lorem', distribution letters which is said to have in.</p>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="p-3 rounded text-center">
+                            <h1><i class="ti-desktop text-primary"></i></h1>
+                            <div class="content">
+                                <h5 class="title mt-3">Fully Responsive</h5>
+                                <p class="text-muted mt-2 mb-0">One disadvantage of Lorum Ipsum is that in certain distribution letters letters appear more than.</p>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            {%endblock%}{#section03#}
+            {%block section04%}
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-5 pb-2">
+                            <span class="badge badge-primary badge-pill"> Latest Features </span>
+                            <h4 class="title mt-3 mb-4">Great Services Provider</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row align-items-center mt-4 pt-2">
+                    <div class="col-md-6">
+                        <img src="{%static "images/marketing/01.png"%}" class="img-fluid" alt="">
+                    </div><!--end col-->
+
+                    <div class="col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="row ml-md-5">
+                            <div class="col-12">
+                                <div class="pb-0 px-4 pt-4">
+                                    <h2><i class="ti-ruler-alt-2 float-left mr-3 mt-3 text-primary"></i></h2>
+                                    <div class="overflow-hidden d-block">
+                                        <h5>Modern Workflow</h5>
+                                        <p class="text-muted mb-0">Moreover, in Latin only words at the beginning of sentences are capitalized.</p>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-12">
+                                <div class="pb-0 px-4 pt-4">
+                                    <h2><i class="ti-light-bulb float-left mr-3 mt-3 text-primary"></i></h2>
+                                    <div class="overflow-hidden d-block">
+                                        <h5>Minimalism Feast</h5>
+                                        <p class="text-muted mb-0">If the fill text is intended to illustrate the characteristics of sometimes.</p>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-12 pl-5 pt-4">
+                                <a href="javascript:void(0)" class="btn btn-outline-primary">Contact Now <i class="mdi mdi-chevron-right"></i></a>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            {%endblock%}{#section04#}
+
+            {%block section05%}
+            <div class="container mt-100 mt-60">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-1 order-md-2">
+                        <img src="{%static "images/marketing/02.png"%}" class="img-fluid" alt="">
+                    </div><!--end col-->
+
+                    <div class="col-md-6 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="row mr-md-5">
+                            <div class="col-12">
+                                <div class="pb-0 px-4 pt-4">
+                                    <h2><i class="ti-user float-left mr-3 mt-3 text-primary"></i></h2>
+                                    <div class="overflow-hidden d-block">
+                                        <h5>Customer Care</h5>
+                                        <p class="text-muted mb-0">Moreover, in Latin only words at the beginning of sentences are capitalized.</p>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-12">
+                                <div class="pb-0 px-4 pt-4">
+                                    <h2><i class="ti-smallcap float-left mr-3 mt-3 text-primary"></i></h2>
+                                    <div class="overflow-hidden d-block">
+                                        <h5>Free Fonts</h5>
+                                        <p class="text-muted mb-0">If the fill text is intended to illustrate the characteristics of sometimes.</p>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-12 pl-5 pt-4">
+                                <a href="javascript:void(0)" class="btn btn-outline-primary">Buy Now <i class="mdi mdi-chevron-right"></i></a>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            {%endblock%}{#section05#}
+            <!-- Feature End -->
+            {%block section06%}
+            <!-- Testimonial Start -->
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Review From Customer's</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row justify-content-center">
+                    <div class="col-md-10 mt-4 pt-2">
+                        <div id="three-post" class="owl-carousel owl-theme">  
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/01.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Martin Sobhe</h6>
+                                        <p class="text-muted mb-0">Infosys</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                            
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space. "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/02.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Bobby DE</h6>
+                                        <p class="text-muted mb-0">Vivo</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                            
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" These alternatives to the classic Lorem Ipsum texts are often amusing and tell short, funny or nonsensical stories accurately represent "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/03.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Sunny Longd</h6>
+                                        <p class="text-muted mb-0">Apple</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                            
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. Allegedly, a Latin scholar "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/04.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Joya Aafri</h6>
+                                        <p class="text-muted mb-0">Oppo</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                            
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/05.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Lisa Marvel</h6>
+                                        <p class="text-muted mb-0">Infinix</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                            
+                            <div class="review mx-2 bg-white rounded border">
+                                <div class="content position-relative overflow-hidden p-4">
+                                    <ul class="list-unstyled h6 text-warning">
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">" Moreover, in Latin only words at the beginning of sentences are capitalized; this means that Lorem Ipsum cannot accurately represent "</p>
+                                    <h1 class="display-1 m-0"><i class="icons ti-quote-left"></i></h1>
+                                </div>
+                                <div class="reviewer d-flex p-4 border-top bg-light">
+                                    <div class="text-center mt-1">
+                                        <img src="{%static "images/client/06.jpg"%}" class="img-fluid avatar avatar-ex-sm mr-3 shadow rounded-pill" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Cristino Murfi</h6>
+                                        <p class="text-muted mb-0">COC</p>
+                                    </div>
+                                </div>
+                            </div><!--end post-->
+                        </div><!--end owl carousel-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            <!-- Testimonial End -->
+            {%endblock%}{#section06#}
+
+            {%block section07%}
+            <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title mb-4">See everything about your employee at one place.</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                        
+                            <div class="mt-4">
+                                <a href="javascript:void(0)" class="btn btn-primary mt-2 mr-2">Get Started Now</a>
+                                <a href="javascript:void(0)" class="btn btn-outline-primary mt-2">Free Trial</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+            {%endblock%}{#section07#}
+            <!--  -->
+        </section><!--end section-->
+        
+        <!-- Section End -->
+        
+        {%block sitemap%}
+        <!-- Footer Start -->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                        <a class="logo-footer text-dark" href="#">Leaping<span class="text-primary">.</span></a>
+                        <p class="mt-4 text-muted mb-0">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">Landing</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="static/index-agency.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Agency</a></li>
+                            <li><a href="static/index-software.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Software</a></li>
+                            <li><a href="static/index-startup.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Startup</a></li>
+                            <li><a href="static/index-application.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Application</a></li>
+                            <li><a href="static/index-business.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Business</a></li>
+                            <li><a href="static/index-freelancer.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Freelancer</a></li>
+                            <li><a href="static/index-marketing.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Marketing</a></li>
+                            <li><a href="static/index-property.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Property</a></li>
+                        </ul>
+                    </div><!--end col-->
+
+                    <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">About</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="static/page-about.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> About us</a></li>
+                            <li><a href="static/page-services.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Services</a></li>
+                            <li><a href="static/page-team.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Team</a></li>
+                            <li><a href="static/page-pricing.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Pricing</a></li>
+                            <li><a href="static/page-services.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Features</a></li>
+                            <li><a href="static/page-faq.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> FAQ</a></li>
+                            <li><a href="static/page-blog.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Blog</a></li>
+                            <li><a href="static/page-login-2.html" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Login</a></li>
+                        </ul>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <h4 class="footer-head text-dark">Locations</h4>
+                        <ul class="list-unstyled footer-list mt-4">
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> San Francisco</a></li>
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Tokio</a></li>
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> South Korea</a></li>
+                            <li><a href="#" class="text-foot text-muted"><i class="mdi mdi-chevron-right mr-1"></i> Myanmar</a></li>
+                        </ul>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer><!--end footer-->
+        {%endblock%}{#sitemap#}
+        {%block footer%}
+        <footer class="footer bg-white border-top footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-left">
+                            <p class="mb-0">© 2020 <span class="text-primary">NWCC</span>. Dev Design and Mod by {{dev_team|default:"B.50"}} <i class="mdi mdi-heart text-danger"></i>
+                            | {{ app_name|default:"NWCC" }} - version {{ app_version|default:"0.01" }}
+                            </p>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <ul class="list-unstyled text-sm-right social-icon social mb-0">
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-instagram" title="Instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-twitter" title="Twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-linkedin" title="Linkedin"></i></a></li>
+                        </ul><!--end icon-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer><!--end footer-->
+        {%endblock%}{#footer#}
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+        <!-- javascript -->
+        <script src="{%static "js/jquery-3.5.1.min.js"%}"></script>
+        <script src="{%static "js/bootstrap.bundle.min.js"%}"></script>
+        <script src="{%static "js/jquery.easing.min.js"%}"></script>
+        <script src="{%static "js/scrollspy.min.js"%}"></script>
+        <!-- Magnific Popups -->
+        <script src="{%static "js/jquery.magnific-popup.min.js"%} "></script>
+        <script src="{%static "js/magnific.init.js"%}"></script>
+        <!-- SLIDER -->
+        <script src="{%static "js/owl.carousel.min.js"%} "></script>
+        <script src="{%static "js/owl.init.js"%}"></script>
+        <!-- Main Js -->
+        <script src="{%static "js/app.js"%}"></script>
+        {%block js%}{%endblock%}
+    </body>
+</html>
