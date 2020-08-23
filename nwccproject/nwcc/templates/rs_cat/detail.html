@@ -24,69 +24,31 @@
 <div class="container mt-100 mt-60">
                 <div class="row">
                     <div class="col-12 text-center">
-<h3>ตารางบัญชีแหล่งข้อมูล</h3>
-<!---start form filter/search---->
-<form action="{{request.path}}" method="get">
-    {% csrf_token %}
-    <label for="your_name">search: </label>
-    <input id="your_name" type="text" name="search" value="">
+<h3>รายละเอียดบัญชีแหล่งข้อมูล</h3>
+<h4># {{content.detail.id}}</h4>
+<p><label>{{content.meta_fields.name}} :</label>{{content.detail.name}}</p>
+<p><label>{{content.meta_fields.link}} :</label>{{content.detail.link}}</p>
+<p><label>{{content.meta_fields.agency}} :</label>{{content.detail.agency}}</p>
+<p><label>{{content.meta_fields.agency_provided_data}} :</label>{{content.detail.agency_provided_data}}</p>
+<p><label>{{content.meta_fields.GroupActPrb}} :</label>{{content.detail.GroupActPrb}}</p>
+<p><label>{{content.meta_fields.keyword}} :</label>{{content.detail.keyword}}</p>
+<p><label>{{content.meta_fields.description}} :</label>{{content.detail.description}}</p>
+<p><label>{{content.meta_fields.Time_period}} :</label>{{content.detail.Time_period}}</p>
+<p><label>{{content.meta_fields.source}} :</label>{{content.detail.source}}</p>
+<p><label>{{content.meta_fields.type_of_data}} :</label>{{content.detail.type_of_data}}</p>
+<p><label>{{content.meta_fields.date_recived}} :</label>{{content.detail.date_recived}}</p>
+<p><label>{{content.meta_fields.reference_doc}} :</label>{{content.detail.reference_doc}}</p>
+<p><label>{{content.meta_fields.document01}} :</label>{{content.detail.document01}}</p>
+<p><label>{{content.meta_fields.document02}} :</label>{{content.detail.document02}}</p>
+<p><label>{{content.meta_fields.document03}} :</label>{{content.detail.document03}}</p>
+<p><label>{{content.meta_fields.related_subject}} :</label>{{content.detail.related_subject}}</p>
+<p><label>{{content.meta_fields.data_licensing}} :</label>{{content.detail.data_licensing}}</p>
+<p><label>{{content.meta_fields.note}} :</label>{{content.detail.note}}</p>
+<p><label>{{content.meta_fields.status}} :</label>{{content.detail.status}}</p>
 
-    <input type="submit" value="OK" class="btn btn-sm btn-primary">
-</form>
-<!--stop form filter/search----->
+<p><label>{{content.meta_fields.created}} :</label>{{content.detail.created}} </p>
 
-<table class="table">
- <thead class="thead-dark">
- <tr>
- <th scope="col">#</th>
- <th scope="col">ชื่อชุดข้อมูล</th>
- <th scope="col">หน่วยงานเจ้าของข้อมูล</th>
- <th scope="col">ได้รับเมื่อ</th>
- <th scope="col">action</th>
- </tr>
- </thead>
- <tbody>
 
-{% for rs_cat in page_obj %}
-<tr>
-    <th scope="row"><span class="text-muted">{{ rs_cat.id }}</span></th>
-    <td>{{ rs_cat.name }}</td>
-    <td>{{ rs_cat.agency_provided_data }}</td>
-    <td>{{ rs_cat.date_recived|date:"d/m/Y"}}</td>
-    <td>
-    
-        <a href="/admin/rs_cat/rs_cat/{{rs_cat.id}}/change/" title="edit"  ><span class="mdi mdi-alpha-e-box-outline"> </span></a> - 
-    
-        <a href="#" title="ดูรายละเอียด" data-toggle="collapse" data-target="#collapseIDdetail{{rs_cat.id}}" aria-expanded="false" aria-controls="collapseIDdetail{{ rs_cat.id }}"><span class="mdi mdi-alpha-d-box-outline"> </span></a>
-        <a href="#" title="ดูโน๊ตจากผู้รับข้อมูล" data-toggle="collapse" data-target="#collapseIDnote{{rs_cat.id}}" aria-expanded="false" aria-controls="collapseIDnote{{ rs_cat.id }}"><span class="mdi mdi-alpha-n-box-outline"> </span></a>
-        <a href="#" title="ลิงค์ที่อยู่ชุดข้อมูล" data-toggle="collapse" data-target="#collapseIDlink{{rs_cat.id}}" aria-expanded="false" aria-controls="collapseIDlink{{ rs_cat.id }}"><span class="mdi mdi-link-box-variant-outline"></span></a>
-        - <a href="{%url 'detail' rs_cat.id%}" title="ดูรายละเอียด" target="_blank"><span class="mdi mdi-file-eye-outline"> </span></a>
-        <div class="collapse" id="collapseIDdetail{{rs_cat.id}}">{{rs_cat.description}}</div>
-        <div class="collapse" id="collapseIDnote{{rs_cat.id}}">{{rs_cat.note}}</div>
-        <div class="collapse" id="collapseIDlink{{rs_cat.id}}">link -> {{rs_cat.link}} <a href="{{ rs_cat.link }}" title="ลิงค์ที่อยู่ชุดข้อมูล" class="btn btn-outline-primary btn-sm rounded-pill" target="_blank">go</a></div>
-
-        <!----https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=loading-content-in-modal-body-via-ajax------>
-    </td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-<!----start pagination---->
-<ul class="pagination mb-0 list-unstyled">
-{% if page_obj.has_previous %}
-<li><a href="#" class="pr-3 pl-3 pt-2 pb-2 border">&laquo; first</a></li>
-<li><a href="?page={{ page_obj.previous_page_number }}" class="pr-3 pl-3 pt-2 pb-2 border">previous</a></li>
-</li>
-{% endif %}
-
-<li class="active"><a href="#" class="pr-3 pl-3 pt-2 pb-2 border">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</a></li>
-
-{% if page_obj.has_next %}
-<li><a href="?page={{ page_obj.next_page_number }}" class="pr-3 pl-3 pt-2 pb-2 border">next</a></li>
-<li><a href="?page={{ page_obj.paginator.num_pages }}" class="pr-3 pl-3 pt-2 pb-2 border">last &raquo;</a></li>
-{% endif %}
-</ul>
-<!----stop pagination---->
 
                     </div><!--end col-->
                 </div><!--end row-->

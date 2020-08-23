@@ -6,6 +6,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('list', views.list, name='list'),
-    
+    path('cat/', views.list, name='list'),
+    path('detail/<int:id>', views.detail, name='detail'),
 ]
