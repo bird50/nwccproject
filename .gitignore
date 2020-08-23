@@ -1,3 +1,4 @@
 db_vol/
 nwccproject/media/
-
+nwccproject/nwccproject/settings.py
+**/__pycache__
