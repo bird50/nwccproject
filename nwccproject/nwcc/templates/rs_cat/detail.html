@@ -26,29 +26,73 @@
                     <div class="col-12 text-center">
 <h3>รายละเอียดบัญชีแหล่งข้อมูล</h3>
 <h4># {{content.detail.id}}</h4>
-<p><label>{{content.meta_fields.name}} :</label>{{content.detail.name}}</p>
-<p><label>{{content.meta_fields.link}} :</label>{{content.detail.link}}</p>
-<p><label>{{content.meta_fields.agency}} :</label>{{content.detail.agency}}</p>
-<p><label>{{content.meta_fields.agency_provided_data}} :</label>{{content.detail.agency_provided_data}}</p>
-<p><label>{{content.meta_fields.GroupActPrb}} :</label>{{content.detail.GroupActPrb}}</p>
-<p><label>{{content.meta_fields.keyword}} :</label>{{content.detail.keyword}}</p>
-<p><label>{{content.meta_fields.description}} :</label>{{content.detail.description}}</p>
-<p><label>{{content.meta_fields.Time_period}} :</label>{{content.detail.Time_period}}</p>
-<p><label>{{content.meta_fields.source}} :</label>{{content.detail.source}}</p>
+<div class="container text-left">
+<div class="row">
+<div class="col-lg-4 col-md-6">
+<div class="sidebar">
+<div class="widget p-4 rounded bg-white border overflow-auto">
+    <p><label>{{content.meta_fields.name}} :</label> <span class="text-muted">{{content.detail.name}}</span></p>
+    <p><label>{{content.meta_fields.link}} :</label> <a href="{{content.detail.link}}"><span class="mdi mdi-link-box-variant-outline"> </span></a>
+    <br/><span class="text-muted">{{content.detail.link}}</span></p>
+    <p><label>{{content.meta_fields.GroupActPrb}} :</label><span class="text-muted">{{content.detail.GroupActPrb}}</span></p>
+</div>
+</div><!---sidebar--->
+</div><!---row---->
+
+<div class="col-lg-8 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+<div class="rounded border position-relative overflow-hidden">
+<div class="p-2 bg-light border-bottom">
+<h6 class="mb-0">หมายเหตุกำกับโดยผู้กรอก</h6>
+</div>
+<div class="p-2">
+<label>{{content.meta_fields.note}} :</label><div class="text-muted">{{content.detail.note}}</div>
+<p><label>{{content.meta_fields.keyword}} :</label><span class="text-muted">{{content.detail.keyword}}</span></p>
+<p><label>{{content.meta_fields.status}} :</label><span class="text-muted">{{content.detail.status}}</span></p>
+<p><label>{{content.meta_fields.created}} :</label><span class="text-muted">{{content.detail.created}} </span></p>
+</div>
+</div><!---rounded border position-relative overflow-hidden---->
+<br/><br/>
+
+<div class="rounded border position-relative overflow-hidden">
+<div class="p-2 bg-light border-bottom">
+<h6 class="mb-0">รายละเอียดประกอบ</h6>
+</div>
+<div class="p-2">
+<p><label>{{content.meta_fields.description}} :</label><span class="text-muted">{{content.detail.description}}</span></p>
+<p><label>{{content.meta_fields.agency}} :</label><span class="text-muted">{{content.detail.agency}}</span></p>
+<p><label>{{content.meta_fields.agency_provided_data}} :</label><span class="text-muted">{{content.detail.agency_provided_data}}</span></p>
+<p><label>{{content.meta_fields.Time_period}} :</label><span class="text-muted">{{content.detail.Time_period}}</span></p>
+<p><label>{{content.meta_fields.source}} :</label><span class="text-muted">{{content.detail.source}}</span></p>
 <p><label>{{content.meta_fields.type_of_data}} :</label>{{content.detail.type_of_data}}</p>
 <p><label>{{content.meta_fields.date_recived}} :</label>{{content.detail.date_recived}}</p>
 <p><label>{{content.meta_fields.reference_doc}} :</label>{{content.detail.reference_doc}}</p>
-<p><label>{{content.meta_fields.document01}} :</label>{{content.detail.document01}}</p>
-<p><label>{{content.meta_fields.document02}} :</label>{{content.detail.document02}}</p>
-<p><label>{{content.meta_fields.document03}} :</label>{{content.detail.document03}}</p>
+<p>
+    <label>{{content.meta_fields.document01}} :</label><span class="text-muted">{{content.detail.document01}}</span>
+    <a href="http://{{request.get_host}}/media/{{content.detail.document01}}"><span class="mdi mdi-link-box-variant-outline"> </span></a>
+</p>
+<p>
+    <label>{{content.meta_fields.document02}} :</label><span class="text-muted">{{content.detail.document02}}</span>
+    <a href="http://{{request.get_host}}/media/{{content.detail.document02}}"><span class="mdi mdi-link-box-variant-outline"> </span></a>
+</p>
+<p>
+    <label>{{content.meta_fields.document03}} :</label><span class="text-muted">{{content.detail.document03}}</span>
+    <a href="http://{{request.get_host}}/media/{{content.detail.document01}}"><span class="mdi mdi-link-box-variant-outline"> </span></a>
+</p>
+
 <p><label>{{content.meta_fields.related_subject}} :</label>{{content.detail.related_subject}}</p>
 <p><label>{{content.meta_fields.data_licensing}} :</label>{{content.detail.data_licensing}}</p>
-<p><label>{{content.meta_fields.note}} :</label>{{content.detail.note}}</p>
-<p><label>{{content.meta_fields.status}} :</label>{{content.detail.status}}</p>
-
-<p><label>{{content.meta_fields.created}} :</label>{{content.detail.created}} </p>
+</div>
+</div><!----rounded border position-relative overflow-hidden--->
 
 
+
+
+
+
+
+</div><!---col-lg-8 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0---->
+</div><!---class row--->
+</div><!---class container---->
 
                     </div><!--end col-->
                 </div><!--end row-->

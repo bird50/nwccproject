@@ -23,7 +23,7 @@ def list(request):
 
 
     myjson = serializers.serialize("json",rs_cat_list)
-    paginator = Paginator(rs_cat_list, 2) 
+    paginator = Paginator(rs_cat_list, 20) 
     page_number = request.GET.get('page')
     search = request.GET.get('search')
     page_obj = paginator.get_page(page_number)
